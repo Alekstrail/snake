@@ -5,7 +5,7 @@
     <title>Snake</title>
 </head>
 <body>
-  <canvas id="canvas" width="400" height="400"></canvas>
+  <canvas id="canvas" width="500" height="500"></canvas>
   <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
   <script>
     var canvas = document.getElementById("canvas");
@@ -77,7 +77,12 @@
     };
     Snake.prototype.draw = function () {
         for(var i=0;i<this.segments.length; i++) {
-            this.segments[i].drawSquare("Blue");
+            if (i%2===0) {
+                this.segments[i].drawSquare("Purple");
+            } else {
+                this.segments[i].drawSquare("Red");
+            }
+
         }
     };
     Snake.prototype.move = function () {
